@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from abb.tasks.t001 import T001Config, T001Dataset
 from abb.tasks.runner import evaluate, run_task
 from abb.models.base import AgentConfig
-from abb.models.baselines import A0Random, A7MLP
+from abb.models.baselines import A0Random, A7MLP, A8RNN
 from abb.models.bio_variants import A1Bio
 
 
@@ -179,6 +179,46 @@ def main():
     print(f"  Test accuracy : {mlp_result['test_acc']*100:.1f}%")
     _print_example(ds, mlp, "A7-MLP")
 
+    # ── A8-LSTM ───────────────────────────────────────────────────────
+    print("\n" + "─" * 64)
+    print(f"  [A8-LSTM] Training for {args.epochs} epochs …")
+    lstm = A8RNN.build(obs_dim=cfg.d_obs, act_dim=cfg.d_act, hidden_dim=128, n_layers=2, cell_type="lstm", seed=42)
+    print(f"  Parameters: {lstm.param_count()['trainable']:,}")
+    lstm_result = run_task(
+        lstm, ds.train, ds.dev, ds.test,
+        n_epochs=args.epochs, lr=1e-3, batch_size=32,
+        verbose=True, log_every=10,
+    )
+    results_all["A8-LSTM"] = {
+        "test_acc": lstm_result["test_acc"],
+        "best_dev_acc": lstm_result["best_dev_acc"],
+        "n_params": lstm_result["n_params"],
+        "epochs": args.epochs,
+        "wall_time_s": lstm_result["wall_time_s"],
+    }
+    print(f"  Test accuracy : {lstm_result['test_acc']*100:.1f}%")
+    _print_example(ds, lstm, "A8-LSTM")
+
+    # ── A8-GRU ────────────────────────────────────────────────────────
+    print("\n" + "─" * 64)
+    print(f"  [A8-GRU] Training for {args.epochs} epochs …")
+    gru = A8RNN.build(obs_dim=cfg.d_obs, act_dim=cfg.d_act, hidden_dim=128, n_layers=2, cell_type="gru", seed=42)
+    print(f"  Parameters: {gru.param_count()['trainable']:,}")
+    gru_result = run_task(
+        gru, ds.train, ds.dev, ds.test,
+        n_epochs=args.epochs, lr=1e-3, batch_size=32,
+        verbose=True, log_every=10,
+    )
+    results_all["A8-GRU"] = {
+        "test_acc": gru_result["test_acc"],
+        "best_dev_acc": gru_result["best_dev_acc"],
+        "n_params": gru_result["n_params"],
+        "epochs": args.epochs,
+        "wall_time_s": gru_result["wall_time_s"],
+    }
+    print(f"  Test accuracy : {gru_result['test_acc']*100:.1f}%")
+    _print_example(ds, gru, "A8-GRU")
+
     # ── A1-BIO ────────────────────────────────────────────────────────
     if not args.no_bio:
         print("\n" + "─" * 64)
@@ -195,8 +235,12 @@ def main():
             assumption_ids=("SA-001", "SA-002", "SA-006", "SA-007", "SA-008", "SA-009"),
         )
         bio = A1Bio(bio_cfg, adj)
-        print(f"  Parameters: {bio.param_count()['trainable']:,}  "
-              f"(N={n_nodes}, nnz={adj.nnz:,})")
+        frozen_malecns = int(adj.nnz) * bio.config.n_layers
+        print(f"  Parameters:")
+        print(f"    - Frozen MaleCNS priors  : {frozen_malecns:,} (synapse count × sign, {adj.nnz:,} per layer)")
+        print(f"    - Trainable parameters   : {bio.param_count()['trainable']:,}")
+        print(f"    - Optimized components   : edge_scale (per edge), node biases, input_proj, readout")
+
 
         print(f"  Training for {args.epochs} epochs …")
         bio_result = run_task(

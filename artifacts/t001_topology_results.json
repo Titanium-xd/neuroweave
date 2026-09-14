@@ -1,0 +1,34 @@
+{
+  "A1-BIO": {
+    "test_acc": 0.98,
+    "best_dev_acc": 1.0,
+    "n_params": 13714,
+    "nodes": 150,
+    "edges": 3029,
+    "wall_time_s": 3.313000000001921
+  },
+  "A3-ER": {
+    "test_acc": 1.0,
+    "best_dev_acc": 0.97,
+    "n_params": 16410,
+    "nodes": 150,
+    "edges": 3029,
+    "wall_time_s": 4.23399999999674
+  },
+  "A3-CONFIG": {
+    "test_acc": 0.99,
+    "best_dev_acc": 1.0,
+    "n_params": 13714,
+    "nodes": 150,
+    "edges": 1681,
+    "wall_time_s": 3.1089999999967404
+  },
+  "A3-DENSE": {
+    "test_acc": 1.0,
+    "best_dev_acc": 1.0,
+    "n_params": 55352,
+    "nodes": 150,
+    "edges": 22500,
+    "wall_time_s": 1.1560000000026776
+  }
+}

@@ -61,6 +61,7 @@ def evaluate(
     with torch.no_grad():
         for obs, labels in loader:
             obs, labels = obs.to(device), labels.to(device)
+            model.reset_state(batch_size=len(obs), device=device)
             logits = model(obs)                    # (B, D_act)
             loss = criterion(logits, labels)
             preds = logits.argmax(dim=1)
@@ -99,6 +100,7 @@ def train_epoch(
     for obs, labels in loader:
         obs, labels = obs.to(device), labels.to(device)
         optimizer.zero_grad()
+        model.reset_state(batch_size=len(obs), device=device)
         logits = model(obs)
         loss = criterion(logits, labels)
         loss.backward()

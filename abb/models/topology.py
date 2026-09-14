@@ -101,36 +101,57 @@ def _er_rewire(adj: sp.coo_matrix, seed: int = 42) -> sp.coo_matrix:
 def _config_rewire(adj: sp.coo_matrix, seed: int = 42) -> sp.coo_matrix:
     """
     Configuration model: preserve exact in/out degree sequence.
-    Uses stub-matching with rejection to avoid self-loops.
-    Falls back to random rewire if stub-matching fails after max_tries.
+    Uses directed edge swaps (Markov chain) to guarantee exact degree preservation
+    while randomizing the topology.
     """
     rng = np.random.default_rng(seed)
     n = adj.shape[0]
-    csr = adj.tocsr()
-
-    out_degrees = np.asarray(csr.getnnz(axis=1))  # (N,)
-    in_degrees  = np.asarray(csr.getnnz(axis=0))  # (N,)
-
-    # Build stubs
-    out_stubs = np.repeat(np.arange(n), out_degrees)
-    in_stubs  = np.repeat(np.arange(n), in_degrees)
-
-    # Shuffle stubs
-    rng.shuffle(out_stubs)
-    rng.shuffle(in_stubs)
-
-    # Build edges from stub pairs; reject self-loops
-    rows, cols = [], []
-    seen = set()
-    for r, c in zip(out_stubs, in_stubs):
-        if r != c and (r, c) not in seen:
-            rows.append(r)
-            cols.append(c)
-            seen.add((r, c))
-
+    adj = adj.copy()
+    adj.sum_duplicates()
+    coo = adj.tocoo()
+    
+    # We will swap edges in place
+    rows = coo.row.copy()
+    cols = coo.col.copy()
     m = len(rows)
-    orig_vals = np.abs(adj.data)
-    orig_signs = np.sign(adj.data).astype(np.float32)
+    
+    edge_set = set(zip(rows, cols))
+    
+    n_swaps = m * 10
+    success = 0
+    
+    for _ in range(n_swaps * 5):  # allow failures
+        if success >= n_swaps:
+            break
+            
+        i, j = rng.integers(0, m, size=2)
+        if i == j:
+            continue
+            
+        u, v = rows[i], cols[i]
+        x, y = rows[j], cols[j]
+        
+        # New proposed edges: u->y and x->v
+        # Check self-loops
+        if u == y or x == v:
+            continue
+            
+        # Check multi-edges (don't create duplicates)
+        if (u, y) in edge_set or (x, v) in edge_set:
+            continue
+            
+        # Perform swap
+        edge_set.remove((u, v))
+        edge_set.remove((x, y))
+        edge_set.add((u, y))
+        edge_set.add((x, v))
+        
+        rows[i], cols[i] = u, y
+        rows[j], cols[j] = x, v
+        success += 1
+
+    orig_vals = np.abs(coo.data)
+    orig_signs = np.sign(coo.data).astype(np.float32)
     new_vals = rng.choice(orig_vals, size=m, replace=True).astype(np.float32)
     new_signs = rng.choice(orig_signs, size=m, replace=True).astype(np.float32)
     data = new_vals * new_signs

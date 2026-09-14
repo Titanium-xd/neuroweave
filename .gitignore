@@ -1,0 +1,73 @@
+# === Secrets and credentials — NEVER commit ===
+.env
+*.env
+.env.*
+!.env.example
+
+# === Data cache (large; reproduce with scripts/data/download_malecns.py) ===
+data/
+!data/.gitkeep
+
+# === Experiment results (archivable separately; not in Git) ===
+results/
+!results/.gitkeep
+
+# === Python artifacts ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+*.whl
+.installed.cfg
+
+# === Virtual environments ===
+.venv/
+venv/
+env/
+ENV/
+
+# === uv / pip lock artifacts (lock file IS committed; these are not) ===
+pip-wheel-metadata/
+
+# === PyTorch and checkpoint files ===
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# === IDE and OS ===
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Jupyter ===
+.ipynb_checkpoints/
+*.ipynb
+
+# === Logs ===
+*.log
+logs/
+
+# === Test and coverage ===
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# === mypy / ruff / other tool caches ===
+.mypy_cache/
+.ruff_cache/
+.hypothesis/

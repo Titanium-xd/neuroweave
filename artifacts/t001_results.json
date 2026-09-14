@@ -1,0 +1,44 @@
+{
+  "task": {
+    "task_id": "T-001",
+    "description": "Binary Pattern Discrimination",
+    "d_obs": 64,
+    "d_act": 2,
+    "n_train": 800,
+    "n_dev": 100,
+    "n_test": 100,
+    "p_low": 0.25,
+    "p_high": 0.75,
+    "seed_train": 1,
+    "seed_dev": 2,
+    "seed_test": 3,
+    "assumption_ids": [
+      "SA-T001"
+    ]
+  },
+  "results": {
+    "A0": {
+      "test_acc": 0.47,
+      "n_params": 0,
+      "epochs": 0,
+      "wall_time_s": 0.0
+    },
+    "A7-MLP": {
+      "test_acc": 1.0,
+      "best_dev_acc": 1.0,
+      "n_params": 41602,
+      "epochs": 40,
+      "wall_time_s": 1.014999999999418
+    },
+    "A1-BIO": {
+      "test_acc": 0.97,
+      "best_dev_acc": 0.98,
+      "n_params": 13714,
+      "n_nodes": 150,
+      "adj_nnz": 3029,
+      "epochs": 40,
+      "wall_time_s": 2.9530000000013388,
+      "graph_label": "MaleCNS v1.0 (150 neurons, 3,029 edges)"
+    }
+  }
+}

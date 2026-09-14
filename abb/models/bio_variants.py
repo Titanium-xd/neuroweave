@@ -118,6 +118,8 @@ class _A1Base(AbstractAgent):
             for layer in self.layers:
                 if isinstance(layer.bias, nn.Parameter):
                     layer.bias.requires_grad_(False)
+                    
+        self._state = None
 
     # ------------------------------------------------------------------
     # AbstractAgent interface
@@ -133,14 +135,36 @@ class _A1Base(AbstractAgent):
         -------
         (B, D_act)
         """
-        x = self.input_proj(obs)           # (B, N)
-        for layer in self.layers:
-            x = layer(x)                   # (B, N)
-        return self.readout(x)             # (B, D_act)
+        B = obs.shape[0]
+        if self._state is None or self._state.shape[0] != B:
+            self.reset_state(batch_size=B, device=obs.device)
+            
+        stim = self.input_proj(obs)           # (B, N)
+        
+        if self.config.extra.get("use_sa010", False):
+            # Phase 3: Leaky-rate temporal dynamics [SA-010]
+            # Engineering assumptions for temporal decay and leak
+            decay = self.config.extra.get("decay", 0.15)
+            leak = self.config.extra.get("leak", 0.08)
+            
+            incoming = self._state
+            for layer in self.layers:
+                incoming = layer(incoming)
+                
+            new_state = torch.tanh((1.0 - decay) * self._state + leak * incoming + stim)
+            self._state = new_state
+        else:
+            # Phase 2: Vanilla RNN
+            x = stim + self._state
+            for layer in self.layers:
+                x = layer(x)                   # (B, N)
+            self._state = x
+            
+        return self.readout(self._state)             # (B, D_act)
 
     def reset_state(self, batch_size: int = 1, device: Optional[torch.device] = None) -> None:
-        """No-op: A1-* models are stateless (no recurrence)."""
-        pass
+        """Reset the internal hidden state to zero."""
+        self._state = torch.zeros((batch_size, self._n_nodes), device=device)
 
     def flops_estimate(self) -> int:
         """

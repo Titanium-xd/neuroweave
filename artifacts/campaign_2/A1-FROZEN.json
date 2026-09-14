@@ -1,0 +1,1124 @@
+{
+  "architecture": "A1-FROZEN",
+  "task": "T-002",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "aggregate": {
+    "test_acc_mean": 0.51,
+    "test_acc_std": 0.0,
+    "test_acc_ci95": 0.0,
+    "wall_time_s_mean": 7.390400000000954
+  },
+  "results_per_seed": [
+    {
+      "seed": 42,
+      "test_acc": 0.51,
+      "best_dev_acc": 0.53,
+      "aulc": 15.369999999999997,
+      "wall_time_s": 7.125,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 2,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 3,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 4,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 5,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 6,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 7,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 8,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 9,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 10,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 11,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 12,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 13,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 14,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 15,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 16,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 17,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 18,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 19,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 20,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 21,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 22,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 23,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 24,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 25,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 26,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 27,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 28,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 29,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 30,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        }
+      ]
+    },
+    {
+      "seed": 43,
+      "test_acc": 0.51,
+      "best_dev_acc": 0.53,
+      "aulc": 15.369999999999997,
+      "wall_time_s": 7.4060000000026776,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 2,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 3,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 4,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 5,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 6,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 7,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 8,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 9,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 10,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 11,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 12,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 13,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 14,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 15,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 16,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 17,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 18,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 19,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 20,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 21,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 22,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 23,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 24,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 25,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 26,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 27,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 28,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 29,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 30,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        }
+      ]
+    },
+    {
+      "seed": 44,
+      "test_acc": 0.51,
+      "best_dev_acc": 0.53,
+      "aulc": 15.369999999999997,
+      "wall_time_s": 7.639999999999418,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 2,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 3,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 4,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 5,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 6,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 7,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 8,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 9,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 10,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 11,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 12,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 13,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 14,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 15,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 16,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 17,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 18,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 19,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 20,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 21,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 22,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 23,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 24,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 25,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 26,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 27,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 28,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 29,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 30,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        }
+      ]
+    },
+    {
+      "seed": 45,
+      "test_acc": 0.51,
+      "best_dev_acc": 0.53,
+      "aulc": 15.369999999999997,
+      "wall_time_s": 7.39100000000326,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 2,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 3,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 4,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 5,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 6,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 7,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 8,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 9,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 10,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 11,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 12,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 13,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 14,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 15,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 16,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 17,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 18,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 19,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 20,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 21,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 22,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 23,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 24,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 25,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 26,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 27,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 28,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 29,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 30,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        }
+      ]
+    },
+    {
+      "seed": 46,
+      "test_acc": 0.51,
+      "best_dev_acc": 0.53,
+      "aulc": 15.369999999999997,
+      "wall_time_s": 7.389999999999418,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 2,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 3,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 4,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 5,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 6,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 7,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 8,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 9,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 10,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 11,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 12,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 13,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 14,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 15,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 16,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 17,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 18,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 19,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 20,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 21,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 22,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 23,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 24,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 25,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 26,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 27,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 28,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 29,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        },
+        {
+          "epoch": 30,
+          "train_loss": NaN,
+          "train_acc": 0.4925,
+          "dev_acc": 0.53,
+          "dev_loss": NaN
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "trainable_parameters": 2852,
+    "frozen_parameters": 3662,
+    "sample_budget": 24000,
+    "compute_budget_epochs": 30,
+    "total_wall_clock_s": 36.95200000000477,
+    "device": "cpu",
+    "graph_nodes": 150,
+    "graph_edges": 1681
+  }
+}

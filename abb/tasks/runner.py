@@ -62,7 +62,15 @@ def evaluate(
         for obs, labels in loader:
             obs, labels = obs.to(device), labels.to(device)
             model.reset_state(batch_size=len(obs), device=device)
-            logits = model(obs)                    # (B, D_act)
+            
+            if obs.dim() == 3:
+                # Sequence task: (B, T, D)
+                for t in range(obs.size(1)):
+                    logits = model(obs[:, t, :])
+            else:
+                # Static task: (B, D)
+                logits = model(obs)                    # (B, D_act)
+                
             loss = criterion(logits, labels)
             preds = logits.argmax(dim=1)
             total_loss += loss.item() * len(labels)
@@ -101,7 +109,15 @@ def train_epoch(
         obs, labels = obs.to(device), labels.to(device)
         optimizer.zero_grad()
         model.reset_state(batch_size=len(obs), device=device)
-        logits = model(obs)
+        
+        if obs.dim() == 3:
+            # Sequence task: (B, T, D)
+            for t in range(obs.size(1)):
+                logits = model(obs[:, t, :])
+        else:
+            # Static task: (B, D)
+            logits = model(obs)
+            
         loss = criterion(logits, labels)
         loss.backward()
         # Clip gradients to prevent instability with large-logit graph models

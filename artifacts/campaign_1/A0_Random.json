@@ -1,0 +1,67 @@
+{
+  "architecture": "A0 Random",
+  "task": "T-001",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "aggregate": {
+    "test_acc_mean": 0.524,
+    "test_acc_std": 0.056780278266313544,
+    "test_acc_ci95": 0.07882366283213744,
+    "wall_time_s_mean": 0.0029999999998835845
+  },
+  "results_per_seed": [
+    {
+      "seed": 42,
+      "test_acc": 0.47,
+      "best_dev_acc": 0.39,
+      "aulc": 0.0,
+      "wall_time_s": 0.0,
+      "history": []
+    },
+    {
+      "seed": 43,
+      "test_acc": 0.46,
+      "best_dev_acc": 0.58,
+      "aulc": 0.0,
+      "wall_time_s": 0.014999999999417923,
+      "history": []
+    },
+    {
+      "seed": 44,
+      "test_acc": 0.6,
+      "best_dev_acc": 0.44,
+      "aulc": 0.0,
+      "wall_time_s": 0.0,
+      "history": []
+    },
+    {
+      "seed": 45,
+      "test_acc": 0.51,
+      "best_dev_acc": 0.58,
+      "aulc": 0.0,
+      "wall_time_s": 0.0,
+      "history": []
+    },
+    {
+      "seed": 46,
+      "test_acc": 0.58,
+      "best_dev_acc": 0.47,
+      "aulc": 0.0,
+      "wall_time_s": 0.0,
+      "history": []
+    }
+  ],
+  "metadata": {
+    "trainable_parameters": 0,
+    "frozen_parameters": 0,
+    "sample_budget": 32000,
+    "compute_budget_epochs": 40,
+    "total_wall_clock_s": 0.014999999999417923,
+    "device": "cpu"
+  }
+}

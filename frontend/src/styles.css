@@ -1,0 +1,201 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ABB — Animal Brain Benchmark design system.
+ * Graphite / bone palette. Bio = moss, AI = restrained blue, caveat = amber.
+ */
+
+@theme inline {
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 10px;
+  --radius-4xl: 12px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-bio: var(--bio);
+  --color-bio-dim: var(--bio-dim);
+  --color-ai: var(--ai);
+  --color-ai-dim: var(--ai-dim);
+  --color-control: var(--control);
+  --color-caveat: var(--caveat);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --radius: 3px;
+
+  --background: oklch(0.168 0.004 90);
+  --surface: oklch(0.204 0.004 90);
+  --surface-2: oklch(0.238 0.004 90);
+  --foreground: oklch(0.946 0.008 85);
+  --muted: oklch(0.238 0.004 90);
+  --muted-foreground: oklch(0.638 0.006 250);
+
+  --card: oklch(0.196 0.004 90);
+  --card-foreground: oklch(0.946 0.008 85);
+  --popover: oklch(0.214 0.004 90);
+  --popover-foreground: oklch(0.946 0.008 85);
+
+  --primary: oklch(0.946 0.008 85);
+  --primary-foreground: oklch(0.168 0.004 90);
+  --secondary: oklch(0.238 0.004 90);
+  --secondary-foreground: oklch(0.9 0.008 85);
+  --accent: oklch(0.262 0.005 90);
+  --accent-foreground: oklch(0.946 0.008 85);
+
+  --bio: oklch(0.706 0.072 148);
+  --bio-dim: oklch(0.5 0.05 148);
+  --ai: oklch(0.674 0.114 248);
+  --ai-dim: oklch(0.48 0.08 248);
+  --control: oklch(0.62 0.012 250);
+  --caveat: oklch(0.775 0.098 76);
+
+  --destructive: oklch(0.6 0.16 26);
+  --destructive-foreground: oklch(0.96 0.008 85);
+  --border: oklch(0.278 0.004 90);
+  --border-strong: oklch(0.36 0.005 90);
+  --input: oklch(0.278 0.004 90);
+  --ring: oklch(0.5 0.02 250);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    background: oklch(0.706 0.072 148 / 25%);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Compact technical label */
+@utility label-tech {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@utility rule-t {
+  border-top: 1px solid var(--border);
+}
+
+@utility page-x {
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+  @media (width >= 90rem) {
+    padding-inline: 4.5rem;
+  }
+}
+
+@utility hairline-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 96px 96px;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Connectome explorer: slow signal travel along a subset of edges. */
+@keyframes abb-signal {
+  0% {
+    stroke-dashoffset: var(--abb-len);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  88% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+.abb-signal {
+  animation: abb-signal 3.4s linear infinite;
+}
+
+@keyframes abb-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.abb-enter {
+  animation: abb-fade-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}

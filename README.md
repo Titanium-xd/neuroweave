@@ -8,6 +8,7 @@ on controlled computational tasks.
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Data: MaleCNS v1.0 CC-BY 4.0](https://img.shields.io/badge/data-MaleCNS%20v1.0%20CC--BY%204.0-blue.svg)](LICENSE-DATA.md)
 [![Security Policy](https://img.shields.io/badge/security-policy-lightgrey.svg)](SECURITY.md)
+[![Live Demo](https://img.shields.io/badge/demo-live%20on%20Cloudflare-orange.svg)](https://e8fb2611.neuroweave.pages.dev/)
 
 ---
 
@@ -233,7 +234,7 @@ LSTM (57.6%).
 
 ## Live Arena
 
-The **Live Arena** (`/arena`) is an interactive benchmark replay.
+The **[Live Arena](https://e8fb2611.neuroweave.pages.dev/arena)** (`/arena`) is an interactive benchmark replay.
 
 **What it is:** A browser demonstration that runs trial-by-trial replays of
 the T-002 delayed-recall task. Each trial draws its outcome from the measured

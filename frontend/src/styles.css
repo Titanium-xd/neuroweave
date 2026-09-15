@@ -199,3 +199,15 @@
 .abb-enter {
   animation: abb-fade-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* Arena: bio node-pulse activity (suppressed by prefers-reduced-motion above) */
+@keyframes abb-node-pulse {
+  0%, 100% { opacity: 0.12; }
+  50%       { opacity: 1; }
+}
+.abb-p1 { animation: abb-node-pulse 1.5s 0.00s ease-in-out infinite; }
+.abb-p2 { animation: abb-node-pulse 1.5s 0.22s ease-in-out infinite; }
+.abb-p3 { animation: abb-node-pulse 1.5s 0.44s ease-in-out infinite; }
+.abb-p4 { animation: abb-node-pulse 1.5s 0.66s ease-in-out infinite; }
+.abb-p5 { animation: abb-node-pulse 1.5s 0.88s ease-in-out infinite; }
+.abb-p6 { animation: abb-node-pulse 1.5s 1.10s ease-in-out infinite; }

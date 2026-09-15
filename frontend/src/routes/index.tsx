@@ -129,14 +129,20 @@ function Home() {
                 <span className="text-3xl md:text-4xl">%</span>
               </span>
               <span className="font-mono text-sm text-muted-foreground">
-                ± {headline.sd.toFixed(1)}
+                ± {headline.ci95 !== null ? headline.ci95.toFixed(1) : headline.sd.toFixed(1)}
               </span>
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
               {ARCH_BY_ID[headline.architectureId]!.label} with SA-010 temporal dynamics on the
               delayed-recall task. Conventional baselines evaluated here reach{" "}
-              <span className="tnum font-mono">47.4%</span> (MLP) and{" "}
-              <span className="tnum font-mono">57.6%</span> (LSTM).
+              <span className="tnum font-mono">
+                {T002.results.find((r) => r.architectureId === "A7-MLP")?.mean.toFixed(1)}%
+              </span>{" "}
+              (MLP) and{" "}
+              <span className="tnum font-mono">
+                {T002.results.find((r) => r.architectureId === "A8-LSTM")?.mean.toFixed(1)}%
+              </span>{" "}
+              (LSTM).
             </p>
             <p
               className="mt-6 max-w-md border-l pl-4 text-[13px] leading-relaxed"

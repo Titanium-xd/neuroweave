@@ -1,6 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-/** Counts up once on mount. Static under prefers-reduced-motion. */
+/**
+ * Counts up to `to` once on mount with an ease-out cubic animation.
+ * Static (no animation) under prefers-reduced-motion.
+ *
+ * Previously used a `started` ref guard that broke under React Strict Mode:
+ * - First effect run: setValue(0), starts RAF
+ * - Cleanup: cancels RAF (value stuck at 0)
+ * - Second effect run: guard bails out → value stays 0 permanently
+ *
+ * Fix: remove the guard. The [to, duration] dep array already prevents
+ * spurious re-runs. Strict Mode's double-invocation now correctly restarts
+ * the animation on the second run.
+ */
 export function CountUp({
   to,
   decimals = 1,
@@ -13,11 +25,8 @@ export function CountUp({
   className?: string;
 }) {
   const [value, setValue] = useState(to);
-  const started = useRef(false);
 
   useEffect(() => {
-    if (started.current) return;
-    started.current = true;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     setValue(0);
     const start = performance.now();

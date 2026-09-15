@@ -2,9 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 const LINKS = [
-  { to: "/benchmark", label: "Benchmark" },
-  { to: "/connectome", label: "Connectome" },
-  { to: "/methodology", label: "Methodology" },
+  { to: "/arena",         label: "Live Arena" },
+  { to: "/how-it-works",  label: "How It Works" },
+  { to: "/benchmark",     label: "Benchmark" },
+  { to: "/connectome",    label: "Connectome" },
+  { to: "/methodology",   label: "Methodology" },
 ] as const;
 
 export function Nav() {
@@ -104,6 +106,12 @@ export function Footer() {
         <div>
           <div className="label-tech">Sections</div>
           <div className="mt-4 flex flex-col gap-2 text-sm text-muted-foreground">
+            <Link to="/arena" className="hover:text-foreground">
+              Live Arena
+            </Link>
+            <Link to="/how-it-works" className="hover:text-foreground">
+              How It Works
+            </Link>
             <Link to="/benchmark" className="hover:text-foreground">
               Benchmark
             </Link>

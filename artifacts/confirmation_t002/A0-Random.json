@@ -12,7 +12,7 @@
     "test_acc_mean": 0.506,
     "test_acc_std": 0.04758150901348125,
     "test_acc_ci95": 0.06605372389920236,
-    "wall_time_s_mean": 0.00639999999984866
+    "wall_time_s_mean": 0.0030000000002473825
   },
   "results_per_seed": [
     {
@@ -20,7 +20,7 @@
       "test_acc": 0.51,
       "best_dev_acc": 0.59,
       "aulc": 0.0,
-      "wall_time_s": 0.0,
+      "wall_time_s": 0.015000000001236913,
       "history": []
     },
     {
@@ -28,7 +28,7 @@
       "test_acc": 0.46,
       "best_dev_acc": 0.45,
       "aulc": 0.0,
-      "wall_time_s": 0.01599999999598367,
+      "wall_time_s": 0.0,
       "history": []
     },
     {
@@ -52,7 +52,7 @@
       "test_acc": 0.59,
       "best_dev_acc": 0.42,
       "aulc": 0.0,
-      "wall_time_s": 0.01600000000325963,
+      "wall_time_s": 0.0,
       "history": []
     }
   ],
@@ -61,7 +61,7 @@
     "frozen_parameters": 0,
     "sample_budget": 24000,
     "compute_budget_epochs": 30,
-    "total_wall_clock_s": 0.0319999999992433,
+    "total_wall_clock_s": 0.015000000001236913,
     "device": "cpu"
   }
 }

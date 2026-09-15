@@ -12,7 +12,7 @@
     "test_acc_mean": 0.74,
     "test_acc_std": 0.17274258305351348,
     "test_acc_ci95": 0.23980514958907537,
-    "wall_time_s_mean": 15.890399999998044
+    "wall_time_s_mean": 16.853199999999923
   },
   "results_per_seed": [
     {
@@ -20,7 +20,7 @@
       "test_acc": 0.58,
       "best_dev_acc": 0.88,
       "aulc": 15.695,
-      "wall_time_s": 16.35899999999674,
+      "wall_time_s": 17.17200000000048,
       "history": [
         {
           "epoch": 1,
@@ -239,7 +239,7 @@
       "test_acc": 0.73,
       "best_dev_acc": 0.87,
       "aulc": 18.294999999999995,
-      "wall_time_s": 15.735000000000582,
+      "wall_time_s": 16.70299999999952,
       "history": [
         {
           "epoch": 1,
@@ -458,7 +458,7 @@
       "test_acc": 0.87,
       "best_dev_acc": 0.88,
       "aulc": 15.864999999999998,
-      "wall_time_s": 15.56199999999808,
+      "wall_time_s": 17.45299999999952,
       "history": [
         {
           "epoch": 1,
@@ -677,7 +677,7 @@
       "test_acc": 0.53,
       "best_dev_acc": 0.89,
       "aulc": 16.444999999999997,
-      "wall_time_s": 15.030999999995402,
+      "wall_time_s": 16.125,
       "history": [
         {
           "epoch": 1,
@@ -896,7 +896,7 @@
       "test_acc": 0.99,
       "best_dev_acc": 1.0,
       "aulc": 26.514999999999997,
-      "wall_time_s": 16.764999999999418,
+      "wall_time_s": 16.813000000000102,
       "history": [
         {
           "epoch": 1,
@@ -1116,7 +1116,7 @@
     "frozen_parameters": 0,
     "sample_budget": 24000,
     "compute_budget_epochs": 30,
-    "total_wall_clock_s": 79.45199999999022,
+    "total_wall_clock_s": 84.26599999999962,
     "device": "cpu",
     "graph_nodes": 150,
     "graph_edges": 1681

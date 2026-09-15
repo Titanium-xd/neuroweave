@@ -10,14 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArenaRouteImport } from './routes/arena'
 import { Route as BenchmarkRouteImport } from './routes/benchmark'
 import { Route as ConnectomeRouteImport } from './routes/connectome'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as ExperimentTaskIdRouteImport } from './routes/experiment.$taskId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArenaRoute = ArenaRouteImport.update({
+  id: '/arena',
+  path: '/arena',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BenchmarkRoute = BenchmarkRouteImport.update({
@@ -28,6 +35,11 @@ const BenchmarkRoute = BenchmarkRouteImport.update({
 const ConnectomeRoute = ConnectomeRouteImport.update({
   id: '/connectome',
   path: '/connectome',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MethodologyRoute = MethodologyRouteImport.update({
@@ -43,46 +55,68 @@ const ExperimentTaskIdRoute = ExperimentTaskIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/arena': typeof ArenaRoute
   '/benchmark': typeof BenchmarkRoute
   '/connectome': typeof ConnectomeRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/methodology': typeof MethodologyRoute
   '/experiment/$taskId': typeof ExperimentTaskIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/arena': typeof ArenaRoute
   '/benchmark': typeof BenchmarkRoute
   '/connectome': typeof ConnectomeRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/methodology': typeof MethodologyRoute
   '/experiment/$taskId': typeof ExperimentTaskIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/arena': typeof ArenaRoute
   '/benchmark': typeof BenchmarkRoute
   '/connectome': typeof ConnectomeRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/methodology': typeof MethodologyRoute
   '/experiment/$taskId': typeof ExperimentTaskIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/benchmark' | '/connectome' | '/methodology' | '/experiment/$taskId'
+    | '/'
+    | '/arena'
+    | '/benchmark'
+    | '/connectome'
+    | '/how-it-works'
+    | '/methodology'
+    | '/experiment/$taskId'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/benchmark' | '/connectome' | '/methodology' | '/experiment/$taskId'
+    | '/'
+    | '/arena'
+    | '/benchmark'
+    | '/connectome'
+    | '/how-it-works'
+    | '/methodology'
+    | '/experiment/$taskId'
   id:
     | '__root__'
     | '/'
+    | '/arena'
     | '/benchmark'
     | '/connectome'
+    | '/how-it-works'
     | '/methodology'
     | '/experiment/$taskId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArenaRoute: typeof ArenaRoute
   BenchmarkRoute: typeof BenchmarkRoute
   ConnectomeRoute: typeof ConnectomeRoute
+  HowItWorksRoute: typeof HowItWorksRoute
   MethodologyRoute: typeof MethodologyRoute
   ExperimentTaskIdRoute: typeof ExperimentTaskIdRoute
 }
@@ -94,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arena': {
+      id: '/arena'
+      path: '/arena'
+      fullPath: '/arena'
+      preLoaderRoute: typeof ArenaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/benchmark': {
@@ -108,6 +149,13 @@ declare module '@tanstack/react-router' {
       path: '/connectome'
       fullPath: '/connectome'
       preLoaderRoute: typeof ConnectomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/methodology': {
@@ -129,8 +177,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArenaRoute: ArenaRoute,
   BenchmarkRoute: BenchmarkRoute,
   ConnectomeRoute: ConnectomeRoute,
+  HowItWorksRoute: HowItWorksRoute,
   MethodologyRoute: MethodologyRoute,
   ExperimentTaskIdRoute: ExperimentTaskIdRoute,
 }

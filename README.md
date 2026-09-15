@@ -1,14 +1,29 @@
-# NeuroWeave
-## Fruit Fly Brain vs AI — Animal Brain Benchmark
+<div align="center">
 
-A benchmark for comparing connectome-topology-constrained neural architectures
-derived from a real *Drosophila* nervous system against conventional AI models
+<br>
+
+# Neuro*Weave*
+
+### Fruit Fly Brain vs AI — Animal Brain Benchmark
+
+A benchmark for comparing connectome-topology-constrained neural architectures  
+derived from a real *Drosophila* nervous system against conventional AI models  
 on controlled computational tasks.
+
+<br>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Data: MaleCNS v1.0 CC-BY 4.0](https://img.shields.io/badge/data-MaleCNS%20v1.0%20CC--BY%204.0-blue.svg)](LICENSE-DATA.md)
 [![Security Policy](https://img.shields.io/badge/security-policy-lightgrey.svg)](SECURITY.md)
 [![Live Demo](https://img.shields.io/badge/demo-live%20on%20Cloudflare-orange.svg)](https://e8fb2611.neuroweave.pages.dev/)
+
+<br>
+
+[![NeuroWeave Homepage](docs/screenshots/homepage.png)](https://e8fb2611.neuroweave.pages.dev/)
+
+*[Live Demo](https://e8fb2611.neuroweave.pages.dev/) · [Benchmark](https://e8fb2611.neuroweave.pages.dev/benchmark) · [Live Arena](https://e8fb2611.neuroweave.pages.dev/arena) · [How It Works](https://e8fb2611.neuroweave.pages.dev/how-it-works)*
+
+</div>
 
 ---
 
@@ -92,6 +107,79 @@ MaleCNS v1.0 connectome
 
 ---
 
+## Key results
+
+<div align="center">
+
+[![Benchmark Results](docs/screenshots/benchmark.png)](https://e8fb2611.neuroweave.pages.dev/benchmark)
+
+</div>
+
+### T-001 — No unique MaleCNS advantage
+
+| Architecture | Accuracy |
+|---|---|
+| MaleCNS-derived | ~99% |
+| Random graph (ER) | ~99% |
+| MLP | ~99% |
+| LSTM | ~99% |
+| Random baseline | ~50% |
+
+All trained architectures approach ceiling accuracy on static binary
+discrimination. T-001 does not discriminate between architectural families —
+an expected and scientifically valid negative result.
+
+### T-002 — MaleCNS-derived + SA-010 performs strongly on delayed recall
+
+*Confirmed results — 5-seed evaluation on held-out test set:*
+
+| Architecture | Mean accuracy | 95% CI | Trainable params |
+|---|---|---|---|
+| **MaleCNS-derived + SA-010** | **94.8%** | **±6.2%** | **6,514** |
+| MaleCNS-derived (frozen) + SA-010 | 72.2% | ±11.4% | 0 |
+| LSTM | 57.6% | ±8.9% | 266,626 |
+| Random baseline | 50.0% | — | 0 |
+
+On the temporal memory task, the MaleCNS-derived model achieves 94.8% accuracy
+using **41× fewer trainable parameters** than the LSTM (57.6%).
+
+> **Scientific caveats** — read before citing:
+>
+> - The SA-010 configuration (decay 0.05 / leak 0.02) was identified through
+>   exploratory sensitivity analysis, then confirmed on a separate held-out test set.
+> - Confidence intervals are wide (±6–11%). The result is meaningful but not
+>   yet decisive at large scale.
+> - This result is task-specific. It does not generalise to other tasks,
+>   other subgraphs, or other organisms.
+> - This is **not** evidence that the fly brain is computationally superior.
+
+---
+
+## Live Arena
+
+<div align="center">
+
+[![Live Arena](docs/screenshots/arena.png)](https://e8fb2611.neuroweave.pages.dev/arena)
+
+</div>
+
+The **[Live Arena](https://e8fb2611.neuroweave.pages.dev/arena)** is an interactive benchmark replay.
+
+**What it is:** A browser demonstration that runs trial-by-trial replays of
+the T-002 delayed-recall task. Each trial draws its outcome from the measured
+benchmark accuracy probabilities:
+
+- MaleCNS-derived + SA-010: 94.8% correct per trial
+- LSTM: 57.6% correct per trial
+
+**What it is not:** The trained PyTorch models are not running in the browser.
+No model weights are loaded client-side. The demo uses a seeded deterministic
+PRNG to generate trial outcomes consistent with the real benchmark statistics.
+
+The caveat is permanently displayed on the arena page.
+
+---
+
 ## System architecture
 
 ```
@@ -107,17 +195,15 @@ e:\animal-brain-benchmark\
 │   ├── data/                # Data pipeline utilities
 │   └── extract_graph_stats.py
 ├── artifacts/               # Real experiment outputs (JSON)
-│   ├── t001_campaign/
-│   └── t002_confirmation/
+│   ├── campaign_1/          # T-001 multi-architecture results (10 architectures)
+│   ├── campaign_2/          # T-002 stateful architecture results
+│   ├── campaign_3/          # T-002 SA-010 5-seed results
+│   ├── confirmation_t002/   # T-002 confirmed results (5-seed, held-out)
+│   └── sensitivity_t002/    # T-002 sensitivity sweep across SA-010 params
 ├── configs/                 # YAML experiment configurations
 ├── data/                    # Raw MaleCNS parquet data
 ├── docs/                    # Methodology, scope, assumptions documents
-├── frontend/                # React/TanStack web interface
-│   └── src/
-│       ├── data/            # benchmark.ts — data layer reading artifacts/
-│       ├── routes/          # Page routes (homepage, benchmark, arena, etc.)
-│       └── components/
-└── tests/
+└── frontend/                # React/TanStack web interface
 ```
 
 ---
@@ -132,11 +218,10 @@ e:\animal-brain-benchmark\
 | A1-FROZEN | Connectome-constrained, frozen weights | 0 | Topology-only ablation |
 
 Both models use the same 150-neuron subgraph with 3,029 directed edges.
-In Phase 3, SA-010 leaky/decay temporal dynamics were added.
+SA-010 leaky/decay temporal dynamics are added for T-002.
 
 **SA-010 assumptions (engineering, not biological fact):**
-- Decay rate: 0.05 (configurable)
-- Leak rate: 0.02 (configurable)
+- Decay rate: 0.05 / Leak rate: 0.02
 - Selected via exploratory sensitivity analysis on T-002
 - Not derived from membrane potential measurements
 
@@ -160,95 +245,18 @@ In Phase 3, SA-010 leaky/decay temporal dynamics were added.
 
 ### T-001 — Binary Pattern Discrimination
 
-**Type:** Static supervised classification  
-**D_obs:** 16  
-**Memory required:** No  
+**Type:** Static supervised classification · **D_obs:** 16 · **Memory required:** No
 
-A single binary pattern (sparse or dense) is presented. The model classifies
-it in one forward pass. This is a baseline sanity check — it confirms that
-architectures are learning, and establishes a ceiling.
+A single binary pattern is presented. The model classifies it in one forward
+pass. Baseline sanity check — establishes a performance ceiling.
 
 ### T-002 — Temporal Sequence Memory (Delayed Recall)
 
-**Type:** Working memory / temporal classification  
-**D_obs:** 16  
-**Memory required:** Yes  
+**Type:** Working memory / temporal classification · **D_obs:** 16 · **Memory required:** Yes
 
 A binary stimulus is shown at time step 0. Several gap steps follow with no
 relevant signal. At the end of the gap, the model must recall which stimulus
-it originally saw. A feedforward network cannot solve this without a memory
-mechanism.
-
----
-
-## Key results
-
-### T-001 — No unique MaleCNS advantage
-
-| Architecture | Accuracy |
-|---|---|
-| MaleCNS-derived | ~99% |
-| Random graph (ER) | ~99% |
-| MLP | ~99% |
-| LSTM | ~99% |
-| Random baseline | ~50% |
-
-**Finding:** All trained architectures approach ceiling accuracy. T-001 does not
-discriminate between architectural families. The connectome-derived topology
-provides no measurable advantage on static pattern discrimination.
-
-This is an expected and scientifically valid negative result. The task is too
-easy to reveal structural differences.
-
-### T-002 — MaleCNS-derived + SA-010 performs strongly on delayed recall
-
-*Confirmed results — 5-seed evaluation on held-out test set:*
-
-| Architecture | Mean accuracy | 95% CI | Trainable params |
-|---|---|---|---|
-| **MaleCNS-derived + SA-010** | **94.8%** | ±6.2% | 6,514 |
-| MaleCNS-derived (frozen) + SA-010 | 72.2% | ±11.4% | 0 |
-| LSTM | 57.6% | ±8.9% | 266,626 |
-| Random baseline | 50.0% | — | 0 |
-
-**Finding:** On the temporal memory task, the MaleCNS-derived model with SA-010
-dynamics achieves 94.8% accuracy using 41× fewer trainable parameters than the
-LSTM (57.6%).
-
-> ⚠️ **Scientific caveats — read before citing:**
->
-> - The SA-010 configuration (decay 0.05 / leak 0.02) was identified through
->   exploratory sensitivity analysis, then confirmed on a separate held-out
->   test set. The exploratory sweep was not used for final evaluation.
-> - Confidence intervals are wide (±6–11%). The result is statistically
->   meaningful but not yet decisive at large scale.
-> - This result is task-specific. It does not generalise to other tasks,
->   other subgraphs, or other organisms.
-> - The advantage may be partly attributable to SA-010 dynamics (an engineering
->   assumption), not purely to the connectome topology.
-> - This is **not** evidence that the fly brain is computationally superior.
->   It is evidence that this specific computational structure performs well on
->   this specific temporal task under these specific experimental conditions.
-
----
-
-## Live Arena
-
-The **[Live Arena](https://e8fb2611.neuroweave.pages.dev/arena)** (`/arena`) is an interactive benchmark replay.
-
-**What it is:** A browser demonstration that runs trial-by-trial replays of
-the T-002 delayed-recall task. Each trial draws its outcome from the measured
-benchmark accuracy probabilities:
-
-- MaleCNS-derived + SA-010: 94.8% correct per trial
-- LSTM: 57.6% correct per trial
-
-**What it is not:** The trained PyTorch models are not running in the browser.
-No model weights are loaded client-side. The demo uses a seeded deterministic
-PRNG (mulberry32) to generate trial outcomes consistent with the real
-benchmark statistics.
-
-The caveat is permanently displayed on the arena page.
+it originally saw. A feedforward network cannot solve this without memory.
 
 ---
 
@@ -257,17 +265,15 @@ The caveat is permanently displayed on the arena page.
 | Limitation | Detail |
 |---|---|
 | Prototype scale | 150-neuron subgraph is a small sample of ~21,000 neurons |
-| Single organism | Results apply to one male *Drosophila*; not generalisable to other species |
+| Single organism | Results apply to one male *Drosophila*; not generalisable |
 | Task scope | Only T-001 and T-002 completed; T-003/T-004 not yet run |
 | SA-010 assumptions | Decay/leak parameters are engineering choices, not measured biology |
 | Wide CIs | 5 seeds; 95% CI ≈ ±6–11% — results need larger-scale confirmation |
-| No ablation of topology vs. dynamics | Cannot yet isolate how much of the T-002 advantage comes from the connectome wiring vs. the SA-010 dynamics |
-| Single subgraph | Only one 150-neuron subgraph tested; results may vary across subgraphs |
+| Single subgraph | Only one 150-neuron subgraph tested |
 
 This project **does not** claim:
 - The model simulates a living fly brain
 - Biological intelligence has been reproduced
-- Consciousness or cognition has been modelled
 - Results generalise to vertebrate or human brains
 - The MaleCNS topology is universally superior to conventional architectures
 
@@ -295,15 +301,16 @@ pip install -e .
 ### Run the T-002 confirmation experiment
 
 ```bash
-# Set Python path
-$env:PYTHONPATH='.'  # PowerShell
-# or
-export PYTHONPATH=.  # bash
+# PowerShell
+$env:PYTHONPATH='.'
+python scripts/tasks/run_confirmation_t002.py
 
+# bash
+export PYTHONPATH=.
 python scripts/tasks/run_confirmation_t002.py
 ```
 
-Results are written to `artifacts/t002_confirmation/`.
+Results are written to `artifacts/confirmation_t002/`.
 
 ### Run the frontend
 
@@ -312,12 +319,6 @@ cd frontend
 npm install
 npm run dev
 # → http://localhost:8080
-```
-
-### Run tests
-
-```bash
-pytest tests/
 ```
 
 ---
@@ -332,50 +333,7 @@ pytest tests/
 | Evaluation | 5-seed, held-out test split, bootstrap 95% CI |
 | Frontend | React 19 + TanStack Router + TanStack Start |
 | Data layer | JSON artifact files read by `src/data/benchmark.ts` |
-| Styling | Tailwind CSS (inline), Inter Tight + Instrument Serif |
-| Deployment | Vite + Nitro (Cloudflare-compatible output) |
-
----
-
-## Project structure
-
-```
-abb/
-  data/loader.py          MaleCNS parquet → PyG graph
-  models/
-    operator.py           Custom signed sparse linear operator
-    malecns_gnn.py        Connectome-constrained GNN (stateful)
-    sa010.py              SA-010 leaky/decay temporal dynamics
-    baselines.py          MLP, LSTM, random policy
-  tasks/
-    t001.py               Binary pattern discrimination
-    t002.py               Temporal delayed recall
-  sim/evaluator.py        Multi-seed evaluation loop
-
-scripts/
-  tasks/
-    run_t001_campaign.py
-    run_confirmation_t002.py
-    run_sensitivity_t002.py
-  extract_graph_stats.py  Subgraph statistics from raw parquet
-
-artifacts/
-  campaign_1/                 T-001 multi-architecture results (10 architectures)
-  campaign_2/                 T-002 stateful architecture results
-  campaign_3/                 T-002 SA-010 5-seed results
-  confirmation_t002/          T-002 confirmed results (5-seed, held-out)
-  sensitivity_t002/           T-002 sensitivity sweep across SA-010 params
-
-frontend/
-  src/
-    data/benchmark.ts     Data layer — reads artifact JSONs
-    routes/               Page routes (index, benchmark, arena, etc.)
-    components/site/      Nav, Footer, TaskResults, ConnectomeExplorer
-
-docs/
-  HOW_IT_WORKS.md         Plain-language explanation (9 chapters)
-  RESULTS_REVIEW_CURRENT.md   Adversarial review of current results
-```
+| Deployment | Cloudflare Pages (Nitro, cloudflare-module preset) |
 
 ---
 
@@ -404,7 +362,7 @@ include the above attribution per the CC-BY 4.0 license terms.
 1. **Scale:** Test larger subgraphs (500, 2000 neurons) — does the T-002 advantage persist?
 2. **Task diversity:** T-003 (navigation), T-004 (lesion robustness), continuous control tasks
 3. **SA-010 ablation:** Isolate the contribution of connectome topology vs. leaky/decay dynamics
-4. **Baseline breadth:** Add transformers, state-space models (S4, Mamba), liquid neural networks
+4. **Baseline breadth:** Add transformers, state-space models (Mamba), liquid neural networks
 5. **Multiple subgraphs:** Test ≥3 subgraphs per experiment to assess subgraph sensitivity
 6. **Reproducibility package:** Docker image, locked dependency manifest, full seed logs
 
@@ -412,18 +370,21 @@ include the above attribution per the CC-BY 4.0 license terms.
 
 ## License
 
-- **NeuroWeave code:** MIT License
-- **MaleCNS-derived data products:** CC-BY 4.0 (attribution required — see above)
+- **NeuroWeave code:** [MIT License](LICENSE)
+- **MaleCNS-derived data products:** [CC-BY 4.0](LICENSE-DATA.md) (attribution required)
 
 ---
 
-## Case Study by
+<div align="center">
 
-**Parva Trivedi**
-- GitHub: [github.com/Titanium-xd](https://github.com/Titanium-xd)
-- Discord: titanium.dc
-- LinkedIn: [linkedin.com/in/parva-trivedi](https://www.linkedin.com/in/parva-trivedi/)
+**Case Study by Parva Trivedi**
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-Titanium--xd-181717?logo=github)](https://github.com/Titanium-xd)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Parva%20Trivedi-0077B5?logo=linkedin)](https://www.linkedin.com/in/parva-trivedi/)
+[![Discord](https://img.shields.io/badge/Discord-titanium.dc-5865F2?logo=discord)](https://discord.com/users/titanium.dc)
+
+<br>
 
 *NeuroWeave — Animal Brain Benchmark v1.0*
+
+</div>

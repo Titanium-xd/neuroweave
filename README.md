@@ -233,8 +233,7 @@ LSTM (57.6%).
 
 ## Live Arena
 
-The [Live Arena](https://neuroweave.vercel.app/arena) is an interactive
-benchmark replay at `/arena`.
+The **Live Arena** (`/arena`) is an interactive benchmark replay.
 
 **What it is:** A browser demonstration that runs trial-by-trial replays of
 the T-002 delayed-recall task. Each trial draws its outcome from the measured

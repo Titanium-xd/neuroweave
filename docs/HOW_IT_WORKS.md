@@ -1,4 +1,4 @@
-﻿# How It Works
+# How It Works
 
 *A plain-language explanation of NeuroWeave — from a real nervous system to a controlled AI benchmark.*
 
@@ -171,8 +171,8 @@ The advantage is task-specific, not a generic property of connectome topology.
 
 **Case Study by Parva Trivedi**
 - GitHub: https://github.com/Titanium-xd
-- Discord: titanium_xd
-- LinkedIn: https://linkedin.com/in/parvatrivedi
+- Discord: titanium.dc
+- LinkedIn: https://www.linkedin.com/in/parva-trivedi/
 
 Source data: MaleCNS v1.0, *Drosophila melanogaster* connectome (public research).
 

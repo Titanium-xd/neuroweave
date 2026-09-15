@@ -6,7 +6,8 @@ derived from a real *Drosophila* nervous system against conventional AI models
 on controlled computational tasks.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Data: MaleCNS v1.0 CC-BY 4.0](https://img.shields.io/badge/data-MaleCNS%20v1.0%20CC--BY%204.0-blue.svg)](https://male-cns.janelia.org)
+[![Data: MaleCNS v1.0 CC-BY 4.0](https://img.shields.io/badge/data-MaleCNS%20v1.0%20CC--BY%204.0-blue.svg)](LICENSE-DATA.md)
+[![Security Policy](https://img.shields.io/badge/security-policy-lightgrey.svg)](SECURITY.md)
 
 ---
 

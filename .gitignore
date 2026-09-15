@@ -5,7 +5,7 @@
 !.env.example
 
 # === Data cache (large; reproduce with scripts/data/download_malecns.py) ===
-data/
+/data/
 !data/.gitkeep
 
 # === Experiment results (archivable separately; not in Git) ===

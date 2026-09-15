@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ABB — Animal Brain Benchmark" },
+      { title: "NeuroWeave — Animal Brain Benchmark" },
       {
         name: "description",
         content:
           "Benchmarking connectome-topology-constrained neural architectures derived from the MaleCNS v1.0 Drosophila connectome against conventional AI models.",
       },
-      { name: "author", content: "Animal Brain Benchmark" },
+      { name: "author", content: "Parva Trivedi" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

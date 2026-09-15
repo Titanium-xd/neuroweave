@@ -5,13 +5,13 @@ import { FAMILY_META, TASKS, type Family } from "@/data/benchmark";
 export const Route = createFileRoute("/benchmark")({
   head: () => ({
     meta: [
-      { title: "Benchmark — T-001 & T-002 | ABB" },
+      { title: "Benchmark — T-001 & T-002 | NeuroWeave" },
       {
         name: "description",
         content:
           "Multi-seed benchmark results for MaleCNS-derived, topology-control and conventional architectures on static pattern discrimination and temporal sequence memory.",
       },
-      { property: "og:title", content: "Benchmark — T-001 & T-002 | ABB" },
+      { property: "og:title", content: "Benchmark — T-001 & T-002 | NeuroWeave" },
       {
         property: "og:description",
         content:

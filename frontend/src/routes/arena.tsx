@@ -5,7 +5,7 @@ import { T002 } from "@/data/benchmark";
 export const Route = createFileRoute("/arena")({
   head: () => ({
     meta: [
-      { title: "Live Arena — Fruit Fly Brain vs AI | ABB" },
+      { title: "Live Arena — Fruit Fly Brain vs AI | NeuroWeave" },
       {
         name: "description",
         content:

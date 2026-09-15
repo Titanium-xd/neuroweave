@@ -6,13 +6,13 @@ import { ARCHITECTURES, FAMILY_META, SOURCE, TASKS, type Family } from "@/data/b
 export const Route = createFileRoute("/methodology")({
   head: () => ({
     meta: [
-      { title: "Methodology — connectome-constrained model families | ABB" },
+      { title: "Methodology — connectome-constrained model families | NeuroWeave" },
       {
         name: "description",
         content:
-          "How ABB derives architectures from the MaleCNS v1.0 connectome, which topology controls isolate wiring effects, and how multi-seed evaluation and limitations are handled.",
+          "How NeuroWeave derives architectures from the MaleCNS v1.0 connectome, which topology controls isolate wiring effects, and how multi-seed evaluation and limitations are handled.",
       },
-      { property: "og:title", content: "Methodology | ABB" },
+      { property: "og:title", content: "Methodology | NeuroWeave" },
       {
         property: "og:description",
         content:
@@ -60,7 +60,7 @@ function Methodology() {
         </div>
         <div className="max-w-xl md:pt-14">
           <p className="text-[17px] leading-relaxed">
-            ABB treats connectome topology as an architectural prior and asks whether that prior
+            NeuroWeave treats connectome topology as an architectural prior and asks whether that prior
             provides measurable computational advantage under controlled tasks.
           </p>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{SOURCE.disclaimer}</p>

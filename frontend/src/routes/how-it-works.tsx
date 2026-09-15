@@ -5,11 +5,11 @@ import { T001, T002 } from "@/data/benchmark";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works | ABB — Animal Brain Benchmark" },
+      { title: "How It Works | NeuroWeave — Animal Brain Benchmark" },
       {
         name: "description",
         content:
-          "A visual story explaining the Animal Brain Benchmark — from real connectome data to a controlled AI comparison. No background required.",
+          "A visual story explaining NeuroWeave — from real connectome data to a controlled AI comparison. No background required.",
       },
     ],
   }),
@@ -566,7 +566,7 @@ function HowItWorks() {
       <Chapter n="08">
         <H>Not every test has a winner.</H>
         <P>
-          The goal of ABB is not to prove that biological brains are universally
+          The goal of NeuroWeave is not to prove that biological brains are universally
           better. It is to discover precisely where — and under what conditions —
           biological structure may provide useful computational properties.
         </P>

@@ -11,10 +11,10 @@ export const Route = createFileRoute("/experiment/$taskId")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Experiment unavailable | ABB" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Experiment unavailable | NeuroWeave" }, { name: "robots", content: "noindex" }] };
     }
     const t = loaderData.task;
-    const title = `${t.code} — ${t.title} | ABB`;
+    const title = `${t.code} — ${t.title} | NeuroWeave`;
     return {
       meta: [
         { title },
@@ -86,7 +86,7 @@ function ExperimentDetail() {
           <Disclosure title="Parameter counts and training time">
             <p>
               Trainable parameter counts, frozen parameter counts, and mean wall-clock training
-              times per seed are sourced from the real ABB experiment artifact JSON files.
+              times per seed are sourced from the real NeuroWeave experiment artifact JSON files.
               Click any row in the results table above to see per-architecture details.
             </p>
           </Disclosure>

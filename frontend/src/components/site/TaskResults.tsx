@@ -184,7 +184,7 @@ export function TaskResults({ task }: { task: Task }) {
 
       <p className="max-w-3xl px-4 py-4 font-mono text-[11px] leading-relaxed text-muted-foreground">
         Range marks show &plusmn;1 SD across seeds. All metrics (95% CI, parameter counts, seed counts,
-        training times) are sourced from real ABB experiment artifacts. Click any row to expand.
+        training times) are sourced from real NeuroWeave experiment artifacts. Click any row to expand.
       </p>
 
     </div>

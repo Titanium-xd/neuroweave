@@ -7,13 +7,13 @@ import { AT_A_GLANCE, TASKS, T002, ARCH_BY_ID } from "@/data/benchmark";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fruit Fly Brain vs AI — Animal Brain Benchmark" },
+      { title: "Fruit Fly Brain vs AI — NeuroWeave" },
       {
         name: "description",
         content:
-          "ABB compares connectome-topology-constrained neural architectures derived from the MaleCNS v1.0 Drosophila connectome against conventional artificial neural architectures under controlled tasks.",
+          "NeuroWeave compares connectome-topology-constrained neural architectures derived from the MaleCNS v1.0 Drosophila connectome against conventional artificial neural architectures under controlled tasks.",
       },
-      { property: "og:title", content: "Fruit Fly Brain vs AI — Animal Brain Benchmark" },
+      { property: "og:title", content: "Fruit Fly Brain vs AI — NeuroWeave" },
       {
         property: "og:description",
         content:
@@ -60,7 +60,7 @@ function Home() {
                 artificial intelligence?
               </p>
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                ABB compares connectome-topology-constrained neural architectures derived from the
+                NeuroWeave compares connectome-topology-constrained neural architectures derived from the
                 MaleCNS v1.0 <em>Drosophila</em> connectome against conventional artificial neural
                 architectures under controlled tasks.
               </p>

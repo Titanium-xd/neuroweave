@@ -4,13 +4,13 @@ import { ConnectomeExplorer } from "@/components/site/ConnectomeExplorer";
 export const Route = createFileRoute("/connectome")({
   head: () => ({
     meta: [
-      { title: "Connectome Explorer — MaleCNS v1.0-derived subgraph | ABB" },
+      { title: "Connectome Explorer — MaleCNS v1.0-derived subgraph | NeuroWeave" },
       {
         name: "description",
         content:
           "Interactive exploration of the 150-node MaleCNS v1.0-derived prototype subgraph: neurons, directed edges, activity state and graph statistics.",
       },
-      { property: "og:title", content: "Connectome Explorer | ABB" },
+      { property: "og:title", content: "Connectome Explorer | NeuroWeave" },
       {
         property: "og:description",
         content:

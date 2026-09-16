@@ -85,7 +85,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Parva Trivedi" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "NeuroWeave" },
+      { property: "og:title", content: "NeuroWeave — Animal Brain Benchmark" },
+      {
+        property: "og:description",
+        content:
+          "Benchmarking connectome-topology-constrained neural architectures derived from the MaleCNS v1.0 Drosophila connectome against conventional AI models.",
+      },
+      { property: "og:url", content: "https://e8fb2611.neuroweave.pages.dev/" },
+      {
+        property: "og:image",
+        content: "https://e8fb2611.neuroweave.pages.dev/og-image.png",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "NeuroWeave — Animal Brain Benchmark" },
+      {
+        name: "twitter:description",
+        content:
+          "Benchmarking connectome-topology-constrained neural architectures derived from the MaleCNS v1.0 Drosophila connectome against conventional AI models.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://e8fb2611.neuroweave.pages.dev/og-image.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

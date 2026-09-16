@@ -21,7 +21,7 @@ on controlled computational tasks.
 
 [![NeuroWeave Homepage](docs/screenshots/homepage.png)](https://e8fb2611.neuroweave.pages.dev/)
 
-*[Live Demo](https://e8fb2611.neuroweave.pages.dev/) · [Benchmark](https://e8fb2611.neuroweave.pages.dev/benchmark) · [Live Arena](https://e8fb2611.neuroweave.pages.dev/arena) · [How It Works](https://e8fb2611.neuroweave.pages.dev/how-it-works)*
+*[Live Demo](https://1e8f359f.neuroweave.pages.dev/) · [Benchmark](https://1e8f359f.neuroweave.pages.dev/benchmark) · [Live Arena](https://1e8f359f.neuroweave.pages.dev/arena) · [How It Works](https://1e8f359f.neuroweave.pages.dev/how-it-works)*
 
 </div>
 
@@ -111,7 +111,7 @@ MaleCNS v1.0 connectome
 
 <div align="center">
 
-[![Benchmark Results](docs/screenshots/benchmark.png)](https://e8fb2611.neuroweave.pages.dev/benchmark)
+[![Benchmark Results](docs/screenshots/benchmark.png)](https://1e8f359f.neuroweave.pages.dev/)
 
 </div>
 
@@ -159,11 +159,11 @@ using **41× fewer trainable parameters** than the LSTM (57.6%).
 
 <div align="center">
 
-[![Live Arena](docs/screenshots/arena.png)](https://e8fb2611.neuroweave.pages.dev/arena)
+[![Live Arena](docs/screenshots/arena.png)](https://1e8f359f.neuroweave.pages.dev/arena)
 
 </div>
 
-The **[Live Arena](https://e8fb2611.neuroweave.pages.dev/arena)** is an interactive benchmark replay.
+The **[Live Arena](https://1e8f359f.neuroweave.pages.dev/arena)** is an interactive benchmark replay.
 
 **What it is:** A browser demonstration that runs trial-by-trial replays of
 the T-002 delayed-recall task. Each trial draws its outcome from the measured
